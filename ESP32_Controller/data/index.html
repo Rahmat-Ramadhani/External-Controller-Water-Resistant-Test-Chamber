@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MOLINA WATER RESISTANT TEST</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <script src="script.js"></script>
+        <div class="topnav">
+            <h1>WATER RESISTANT TEST CHAMBER</h1>
+        </div>
+        <img id="flow-meter" src="OFF.jpg" alt="Flow Meter" class="responsiveimg" width="600" height="480">
+        <div id="ipx-button-content">
+          <div class="card-ipx-button">
+            <button id="ipx5-button" style="background-color: #009933;" class="ipx-button" onclick="ipx5click()">IPX5</button>
+            <button id="ipx6-button" style="background-color: #ff9933;" class="ipx-button" onclick="ipx6click()">IPX6</button>
+          </div>
+        </div>
+
+        
+           
+         
+        <div id="controller-content">
+
+              
+
+          <div class="content" >
+            
+            
+            
+            
+
+            <div id="running-status">
+              <div class="card-grid">
+                <div>
+                  <div class="col-100">
+                    <label class="card-title">Test Status</label>
+                  </div><br><br>
+                  
+                  <p id="total-remaining">Remanining Time: </p>
+                  <p id="current-program">Running: </p>
+                  <p id="current-test">Current Test: </p>
+                </div>
+                
+              </div>
+            </div>
+
+            <div id="program-section">
+              <div class="card-grid">
+                <form>
+                  <div class="row">
+                    <div class="col-75">
+                      <label for="program-name" class="card-title">Name</label>
+                    </div>
+                    <div class="col-100">
+                      <input type="text" id="input-name" placeholder="Program Name">
+                    </div>
+                  </div> <br>
+                </form>
+              </div>
+  
+              <div class="row">                   
+                <div class="col-100">
+                  <button id="create-button" class="addButton" onclick="createProgram()">Create</button>
+                </div>
+              </div><br><br>
+  
+              <div class="card-grid">
+                <div class="col-100">
+                  <label class="card-title">Program List</label>
+                </div><br>
+                <ul id="program-list"></ul>
+  
+              </div>  
+            </div>
+
+            <div id="command-section">
+              <div class="card-grid">
+                <form>
+                  <div class="row">
+                      <div class="col-75">
+                          <label for="ipx" class="card-title">Test</label>
+                      </div>
+                      <div class="col-100">
+                        <div class="col-25">
+                          <select id="ipx" name="ipx">
+                            <option value="none" disabled selected hidden></option>
+                            <option value="IPX5">IPX5</option>
+                            <option value="IPX6">IPX6</option>
+                          </select>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-75">
+                      <label for="input-time" class="card-title">Time</label>
+                    </div>
+                    <div class="col-100">
+                      <div class="col-25">
+                        <input type="number" id="input-hour" name="input-hour" placeholder="Hour">
+                      </div>
+                      <div class="col-10">
+                        <p><b>:</b></p>
+                      </div>
+                      <div class="col-25">
+                        <input type="number" id="input-minute" name="input-minute" placeholder="Minute">
+                      </div>
+                      <div class="col-10">
+                        <p><b>:</b></p>
+                      </div>
+                      <div class="col-25">
+                        <input type="number" id="input-second" name="input-second" placeholder="Second">
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  </form>
+              </div>
+              <div class="row">                   
+                <div class="col-100">
+                  <button id="add-button" class="addButton" onclick="addCommand()">Add</button>
+                </div>
+              </div><br><br>
+            
+              <div class="card-grid">
+                <div class="col-100">
+                  <label id="label-command-list" class="card-title">Command List</label>
+                </div><br>
+                <ul id="command-list"></ul>
+              </div>  
+            </div>
+
+
+
+            <div id="menu-section">
+              <div class="card-grid">
+                <div class="col-100">
+                  <label class="card-title">Clock</label>
+                </div>              
+                <p id="current-clock">Current time: </p>
+                <div style="text-align: center;">
+                  <button id="set-clock-button" class="runButton" onclick="setClock()" style="background-color: #163020; max-width: 298px;">Adjust Time</button>
+                </div>
+              </div> 
+            </div>
+
+          
+
+            <div id="running-command">
+              <div class="card-grid">
+                <div class="col-100">
+                  <label id="label-running-command-list" class="card-title">Command List</label>
+                </div><br>
+                <ul id="running-command-list"></ul>
+              </div> 
+            </div>
+
+
+            <div id="history-section">
+              <div class="card-grid">
+
+                <div id="dateHistoryScreen">
+                  <div class="col-100">
+                    <label class="card-title">Test History</label>
+                  </div><br><br>
+
+                  <br><ul id="dateHistoryScreen-list"></ul>
+
+                </div>
+              
+              
+                <div id="listHistoryScreen">
+                  <div class="col-100">
+                    <label class="card-title" id="title-listHistoryScreen">Test History</label>
+                  </div><br><br><br>
+
+                  <ul id="listHistoryScreen-list"></ul>
+
+                </div>
+
+                <div id="reportHistoryScreen">
+                  <div class="col-100">
+                    <label class="card-title">Test Report</label>
+                  </div><br><br>
+
+                  <p id="ran-program"></p>
+                  <p id="ran-status"></p>
+                  <p id="ran-date"></p>
+                  <p id="start-time"></p>
+                  <p id="stop-time"></p>
+                  <p id="status"></p>
+                  <p>Log Activities : </p>
+                  <ul id="reportHistoryScreen-list"></ul>
+                </div>
+
+                
+
+              </div>
+            </div><br><br>
+
+            <div id="menu-history-button" style="text-align: center;" class="programhistory">
+              <button id="menu-button" class="runButton" onclick="menuClick()" style="background-color: #B0A695; max-width: 298px;">Menu</button>
+              <button id="programToHistory-button" class="runButton" onclick="programHistoryClick()" style="background-color: #776B5D; max-width: 298px;">History</button>
+            </div>
+
+            <div style="text-align: center;" class="programhistory">
+              <button id="universal-back-button" class="runButton" onclick="universalBackClick()" style="background-color: #333399; max-width: 298px;">Back</button>
+             
+            </div>
+
+            <div id="command-button" class="runStopPart">
+              <button id="run-button" class="runButton" style="background-color: #339966; font-weight: bold;" onclick="runClick()">Run</button>
+              <button id="pause-button" class="runButton" style="background-color: #ffcc00; font-weight: bold;" onclick="pauseClick()">Pause</button>
+              <button id="stop-button" class="runButton" style="background-color: #FF0000; font-weight: bold;" onclick="stopClick()">Stop</button>
+              <button id="back-button" class="runButton" style="background-color: #333399; font-weight: bold;" onclick="backClick()">Back</button>
+            </div>
+
+              
+
+            
+            
+
+            
+          </div>
+
+            
+
+          <div class="takeOverPart">
+              <p id="Take-over-description" class="card-title">Press Button to Take Over The Controller</p>
+              <button id="Take-over-button" class="button" onclick="takeOverClick()">Take Over</button>
+          </div>
+
+        </div>
+        
+        
+    </body>
+</html>

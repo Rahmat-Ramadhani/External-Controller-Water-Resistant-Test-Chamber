@@ -1,0 +1,379 @@
+html {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    display: inline-block;
+    /*text-align: center;*/
+}
+h1 {
+    font-size: 1.5rem;
+    color: white;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #0A1128;
+    text-align: center;
+}
+body {
+    margin: 0;
+}
+.content {
+    padding: 10px 50px 10px 50px;
+ 
+}
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    color: #fff;
+    background-color: #FF0000;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+  
+.button:hover {background-color: #FF0000}
+
+.button:active {
+    background-color: #FF0000;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.ipx-button{
+    max-width: 298px;
+    width: 45%;
+    padding: 12px 25px;
+    
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #FF0000;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 6px #999;
+}
+
+.ipx-button:hover {background-color: #FF0000}
+
+.ipx-button:active {
+    background-color: #FF0000;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.card-ipx-button{
+    
+    
+    padding: 25px;
+    text-align: center;
+}
+
+.card-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 0rem;
+    
+}
+.takeOverPart {
+    padding: 25px;
+    text-align: center;
+}
+
+.runStopPart {
+    padding: 25px;
+    text-align: center;
+}
+.card {
+    background-color: white;
+    box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5);
+}
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #034078
+}
+.reading {
+    font-size: 1.2rem;
+    color: #1282A2;
+}
+
+
+.responsiveimg {
+    background-color: #7f98c1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.program-card{
+    background-color: #034078;
+    margin-top: 0px;
+    padding: 5px 5px 5px 5px;
+    
+ 
+}
+
+/*==============Styling Human Input Part==================*/
+
+
+* {
+box-sizing: border-box;
+
+}
+
+input[type=number], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+resize: vertical;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+padding: 12px 12px 12px 0;
+display: inline-block;
+}
+
+.addButton {
+    position: relative;
+    background-color: #669999;
+    font-weight: bold;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 5px;
+
+
+
+}
+
+.addButton:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.addButton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.runButton {
+    position: relative;
+    
+    font-weight: bold;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 5px;
+
+
+
+}
+
+.runButton:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.runButton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.container {
+width: 800px;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 4px 10px 10px 10px
+
+
+}
+
+.col-25 {
+float: left;
+width: 28.8%;
+margin-top: 6px;
+margin-right: 6px;
+
+}
+.col-10 {
+    float: left;
+    margin-top: 0px;
+    margin-right: 6px; 
+}
+.col-75 {
+float: left;
+width: 20%;
+margin-top: 6px;
+}
+
+.col-100 {
+    float: left;
+    width: 80%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.col-100, .col-75, .addButton {
+    width: 100%;
+    margin-top: 0;
+}
+}
+
+/*============================Styling list program===================*/
+/* Remove margins and padding from the list */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 100px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#reportHistoryScreen-list ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 10px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) 
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}*/
+
+/* Darker background-color on hover 
+ul li:hover {
+    background: #ddd;
+}*/
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+  
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Style the edit button */
+.edit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10.5px 16px 10.5px 16px;
+}
+  
+.edit:hover {
+    background-color: #b2cbde;
+    color: white;
+}
+
+.edit:active {
+    background-color: #304674;
+    color: white;
+}
+
+/* Style Number */
+.number {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    padding: 12px 10px 12px 13px;
+}
+
+.text {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    padding: 12px 10px 12px 13px;
+}
+
+
+
+.liClass:hover {
+    background-color: #ddd;
+}
